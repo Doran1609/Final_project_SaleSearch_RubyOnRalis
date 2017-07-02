@@ -15,5 +15,19 @@
   <%= @company.image %>
 </p>
 
+
+<!-- Display the Items of a company -->
+<h2>Reviews</h2>
+<% @company.items.each do |item| %>
+<p>
+<b>Name of the products:</b>
+<%= item.name %>
+<%= item.description %>
+</p>
+<% end %>
+
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>
+<%= link_to 'Show Items', company_items_path(@company) %>
+
+

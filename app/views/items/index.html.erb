@@ -1,2 +1,23 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<h1>Products in <%= @company.name %></h1>
+    
+    <table>
+    <tr>
+    <th>products details</th>
+     </tr>
+        <% for item in @items %>
+        <tr>
+        <td><%= item.name %></td>
+        <td><%= item.description %></td>
+        
+        <td><%= link_to 'Show', company_item_path(@company, item)
+        %></td>
+        <td><%= link_to 'Edit', edit_company_item_path(@company, item)
+        %></td>
+        <td><%= link_to 'Destroy', company_item_path(@company, item),
+        :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+    <% end %>
+    </table>
+    <br />
+<%= link_to 'New Item', new_company_item_path(@company) %>
+<%= link_to 'Back to the company', @company %>
