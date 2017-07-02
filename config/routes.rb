@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'items/index'
+
+  get 'items/show'
+
+  get 'items/new'
+
+  get 'items/edit'
+
+  get 'items/update'
+
   resources :companies
 
   # The priority is based upon order of creation: first created -> highest priority.
