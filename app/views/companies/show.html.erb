@@ -21,9 +21,24 @@
 <% @company.items.each do |item| %>
 <p>
 <b>Name of the products:</b>
-<%= item.name %>
-<%= item.description %>
 </p>
+
+<p>
+  <strong>Name:</strong>
+  <%= item.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= item.description %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= item.image %>
+</p>
+
+
 <% end %>
 
 <%= link_to 'Edit', edit_company_path(@company) %> |

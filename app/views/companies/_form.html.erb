@@ -1,29 +1,47 @@
-<%= form_for(@company) do |f| %>
-  <% if @company.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+<%= render 'shared/errors', obj: @company %>
 
-      <ul>
-      <% @company.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+      
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<div class='row'>
+  <div class="col-xs-12">
+    <%= form_for(@company, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :name %>
+          </div>
+            
+          <div class="col-sm-8">
+            <%= f.text_field :name, class: "form-control", placeholder: "Name of the Company", autofocus: true %>
+          </div>
+        </div>
+        
+       <div class="form-group">
+            <div class="control-label col-sm-2">
+              <%= f.label :image %><br>
+          </div>
+          
+          <div class="col-sm-8">
+              <%= f.text_field :image, class: "form-control", placeholder: "Image of the Product" %>
+          </div>
+        </div>
+      
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= f.label :description %>
+          </div>
+         
+          <div class="col-sm-8">
+            <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Description of the Product" %>
+          </div>
+      </div>
+     
+      
+      
+       <div class=="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <%= f.submit class: 'btn btn-primary btn-lg' %>
+          </div>
+        </div>
+    <% end %>
+
+ 
