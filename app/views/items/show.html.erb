@@ -1,8 +1,9 @@
 <h1>Products in <%= @company.name %></h1>
 <p>
-<b>Products details:</b>
-<%= @item.name %>
-<%= @item.description %>
+    
+    <b>Products details:</b>
+    <%= @item.name %>
 </p>
-<%= link_to 'Edit', edit_company_item_path(@compay, @item) %> |
-<%= link_to 'Back', company_items_path(@company) %>
+
+<%= link_to 'Edit', edit_company_item_path(@company, @item)%>
+<%= link_to 'Back', company_items_path%>

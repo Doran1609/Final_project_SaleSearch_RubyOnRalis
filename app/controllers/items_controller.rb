@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
     # Populate an item associate with company 1 with form data
     # Company will be associated with the Item
     # @item = @company.items.build(params.require(:item).permit!)
-    @item = @company.items.build(params.require(:item).permit(:name).permit(:description))
+    @item = @company.items.build(params.require(:item).permit(:name))
       if @item.save
         # Save the item successfully
         redirect_to company_item_url(@company, @item)
@@ -53,13 +53,14 @@ class ItemsController < ApplicationController
 
 # PUT /companies/1/items/2
   def update
-    @company = Company.find(params[:company_id])
-    @item = Item.find(params[:id])
-    if @item.update_attributes(params.require(:item).permit(:name).permit(:description))
-      # Save the item successfully
-      redirect_to company_item_url(@company, @item)
-    else
-      render :action => "edit"
+    respond_to do |format|
+      if @item.update(company_items_params)
+        format.html { redirect_to @item, notice: 'Movie was successfully updated.' }
+        format.json { render :show, status: :ok, location: @item }
+      else
+        format.html { render :edit }
+        format.json { render json: @item.errors, status: :unprocessable_entity }
+      end
     end
   end
   
