@@ -25,31 +25,25 @@ class CompaniesController < ApplicationController
   # POST /companies.json
   def create
     @company = Company.new(company_params)
-
-    respond_to do |format|
-      if @company.save
-        format.html { redirect_to @company, notice: 'Company was successfully created.' }
-        format.json { render :show, status: :created, location: @company }
+    if @company.save
+        flash[:success] = "Company was successfully created."
+        redirect_to company_path(@company)
       else
-        format.html { render :new }
-        format.json { render json: @company.errors, status: :unprocessable_entity }
-      end
+        render 'new' 
     end
   end
 
   # PATCH/PUT /companies/1
   # PATCH/PUT /companies/1.json
   def update
-    respond_to do |format|
       if @company.update(company_params)
-        format.html { redirect_to @company, notice: 'Company was successfully updated.' }
-        format.json { render :show, status: :ok, location: @company }
+        flash[:success] = "Company was successfully updated."
+        redirect_to company_path(@company)
       else
-        format.html { render :edit }
-        format.json { render json: @company.errors, status: :unprocessable_entity }
+        render 'edit'
       end
-    end
   end
+  
 
   # DELETE /companies/1
   # DELETE /companies/1.json

@@ -1,48 +1,60 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
+<h1 Align="center"> <%= @company.name %> </h1>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @company.description %>
-</p>
+<div class="articale-actions">
+    <%= link_to 'Edit', edit_company_path(@company), class: "btn btn-xs btn-primary" %> 
 
-<p>
-  <strong>Image:</strong>
-  <%= @company.image %>
-</p>
+    <%= link_to 'Delete this company', company_path(@company), method: :delete,
+                                      data: { confirm: "Are you sure yu want to delete this company?"},
+                                      class: :"btn btn-xs btn-danger" %>
+                                      
+     <%= link_to 'Back', companies_path, class: "btn btn-xs btn-success" %>  
 
-
+  </div>
+</div>
+ 
 <!-- Display the Items of a company -->
-<h2>Reviews</h2>
+
+<h1 Align="center">Products</h2>
+
 <% @company.items.each do |item| %>
-<p>
-<b>Name of the products:</b>
-</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= item.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= item.description %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= item.image %>
-</p>
-
+<ul class="homecont-list">
+    <li>
+        <div class="homecont"> 
+    
+            <div class="one"> 
+                <h1> <%= link_to item.name %> </h1>
+            </div>
+            
+            <div class="two">
+                <h1> <%= link_to (image_tag item.image, :style => "height:150px") %> </h1>
+            </div>
+            
+            <div class="three">
+                <%= item.description %>
+            </div>
+            
+            <div class="buybtn2">
+              <p><a  href="#" class="btn btn-default" role="button">Buy Online</a></p>
+            </div> 
+            
+        </div>
+    </li>
+</ul>
 
 <% end %>
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
-<%= link_to 'Show Items', company_items_path(@company) %>
+
+<div class="new-company-button"> 
+    <%= link_to 'Back to the list of companies', companies_path %> |
+    <%= link_to 'New Item', new_company_item_path(@company) %> |
+    <%= link_to 'Show Items', company_items_path(@company) %>
+    
+</div>
 
 
+
+    

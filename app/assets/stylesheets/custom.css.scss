@@ -95,9 +95,8 @@ $navbar-new-bg: #000066;
 	margin-top: 0;
 	
 }
-
+// index.html.erb
 .homecont {
-	float: left;
 	margin: 5;
 	border: black 2px solid;
 	margin: 10px;
@@ -105,8 +104,28 @@ $navbar-new-bg: #000066;
   box-sizing: border-box;
   width: 300px;
   height: 300px;    
-  
-  
+}
+
+.homecont-list {
+	list-style: none;
+	padding: 0;
+	display: inline-block;
+	
+	
+}
+
+.outside-company {
+	text-align: center;
+	
+}
+
+.new-company-button {
+	padding: 0 0 0 5%;
+	
+}
+.product-details {
+	padding: 0 41%;
+	
 }
 
 .one {

@@ -1,9 +1,31 @@
-<h1>Products in <%= @company.name %></h1>
+<h2 align="center">Products in <%= @company.name %></h2>
 <p>
     
     <b>Products details:</b>
-    <%= @item.name %>
-</p>
+    
+<ul class="homecont-list">
+    <li>
+        <div class="homecont"> 
+    
+            <div class="one"> 
+                <%= @item.name %>
+            </div>
+            
+            <div class="two">
+                <%= @item.image %>
+            </div>
+            
+            <div class="three">
+              <%= @item.price %>
+             </div> 
+            
+        </div>
+    </li>
+</ul>
+
+
+<div class="new-company-button"> 
 
 <%= link_to 'Edit', edit_company_item_path(@company, @item)%>
 <%= link_to 'Back', company_items_path%>
+</div>

@@ -1,4 +1,4 @@
-<h1>Products in <%= @company.name %></h1>
+<h1 Align="center">Products in <%= @company.name %></h2>
     
 <table>
     <tr>
@@ -7,8 +7,22 @@
      
 <% for item in @items %>
     <tr>
-        <td><%= item.name %></td>
-        <td><%= item.description %></td>
+<div class="homecont">
+    
+    <div class="one"> 
+    
+       <h1> <%= link_to item.name %> </h1>
+    </div>
+    
+    <div class="two">
+        <h1> <%= link_to (image_tag item.image, :style => "height:150px") %> </h1>
+    </div>
+    
+    <div class="three">
+        <%= item.description %>
+    </div>
+</div>
+        
             
         <td><%= link_to 'Show', company_item_path(@company, item) %></td>
         <td><%= link_to 'Edit', edit_company_item_path(@company, item) %></td>
