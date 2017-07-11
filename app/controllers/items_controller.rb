@@ -8,7 +8,10 @@ class ItemsController < ApplicationController
     @company = Company.find(params[:company_id])
     # Access all items for that company
     @items = @company.items
+    
   end
+  
+  
 
 
 # GET /companies/1/items/2
@@ -33,7 +36,7 @@ class ItemsController < ApplicationController
     # Populate an item associate with company 1 with form data
     # Company will be associated with the Item
     # @item = @company.items.build(params.require(:item).permit!)
-    @item = @company.items.build(params.require(:item).permit(:name, :image, :description, :price, :category))
+    @item = @company.items.build(params.require(:item).permit(:name, :image, :description, :price, :category, :specification))
       if @item.save
         # Save the item successfully
         redirect_to company_item_url(@company, @item)

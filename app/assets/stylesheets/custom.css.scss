@@ -253,6 +253,145 @@ $navbar-new-bg: #000066;
 }
 
 
+/* Item Index */
+
+.img {
+  float: left;
+}
+
+.title{
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+
+.description{
+	margin-bottom: 16px;
+	
+}
+
+.price {
+	color: maroon;
+	font-weight: 800;
+	font-size: 14px;
+	text-align: right;
+}
+
+
+
+/* -------------------- Cart ------------------- */
+.cart { /* size of the table*/
+	width: 95%;
+	border-collapse:collapse;
+	margin-left: 15px;
+
+}
+
+
+.cart table, tr {
+	border:1px solid #d7dbe2;
+
+	
+}
+
+
+.cart img {
+	border: 0px;
+}
+	
+.legend {
+	background-color: #dce2ed;
+	text-align: center;
+	
+}
+
+
+.cartButton {
+	background-color: seagreen;
+	padding: 5px;
+	border: 2px red solid;
+	border-radius:15px;
+ 	-moz-border-radius:15px; /* Old Firefox */
+}
+
+#cartLinks a:hover {
+	text-decoration: none;
+	color: azure;
+}
+
+#cartLinks a:link {
+	text-decoration: none;
+	color: azure;
+}
+
+#cartLinks a:active {
+	text-decoration: none;
+	color: azure;
+}
+
+#cartLinks a:visited {
+	text-decoration: none;
+	color: azure;
+}
+
+
+#cartLinks {
+	margin-left: 15px;
+}
+
+.removeButton {
+	background-color: seagreen;
+	padding: 0px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 10px;
+	border: 2px red solid;
+	border-radius:15px;
+ 	-moz-border-radius:15px; /* Old Firefox */
+}
+
+
+.removeLink a:hover {
+	text-decoration: none;
+	color: azure;
+}
+
+.removeLink a:link {
+	text-decoration: none;
+	color: azure;
+}
+
+.removeLink a:active {
+	text-decoration: none;
+	color: azure;
+}
+
+.removeLink a:visited {
+	text-decoration: none;
+	color: azure;
+}
+
+
+.name {
+	text-align: center;
+}
+
+.quantity, .pricec, .priceeee {
+	text-align: center;
+}
+
+.pricet{
+	text-align: center;
+	color: maroon;
+	font-weight: 800;
+	font-size: 14px;
+}
+
+.main{
+	font-family: Palatino Linotype;
+}
 /* Mobile */
 
 @media handheld, only screen and (max-width: 767px) {

@@ -1,7 +1,6 @@
 <h1 Align="center">Listing Companies</h1>
 
   
-
 <% @companies.each do |company| %>
 
 <ul class="homecont-list">
@@ -21,12 +20,16 @@
             </div>
             
             <div class="buybtn">
-              <p><a  href="#" class="btn btn-default" role="button">Buy Online</a></p>
+                <%= link_to 'Check this Out', company %> 
+                 <!---<p><a  href="ite" class="btn btn-default" role="button">Check this out</a></p> --->
             </div> 
      
         </div>
     </li>
 </ul>
+
+
+
 
 <% end %>
 

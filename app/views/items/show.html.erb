@@ -2,26 +2,16 @@
 <p>
     
     <b>Products details:</b>
-    
-<ul class="homecont-list">
-    <li>
-        <div class="homecont"> 
-    
-            <div class="one"> 
-                <%= @item.name %>
-            </div>
-            
-            <div class="two">
-                <%= @item.image %>
-            </div>
-            
-            <div class="three">
-              <%= @item.price %>
-             </div> 
-            
-        </div>
-    </li>
-</ul>
+  
+        <p> Name: <%= @item.name %> </p>
+        <p> Description: <%= @item.description %> </p>
+        <p> Specificacion: <%= @item.specification %> </p>
+        <p> Category: <%= @item.category %> </p>
+        <p> Price: <%= @item.price %> </p>
+   
+        
+<%= link_to 'Buy' %>
+           
 
 
 <div class="new-company-button"> 

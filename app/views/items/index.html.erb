@@ -1,35 +1,58 @@
+<!--%= link_to "Your cart", :controller => :cart, :action => :index %-->
+
 <h1 Align="center">Products in <%= @company.name %></h2>
-    
-<table>
-    <tr>
-        <th>Products details</th>
-     </tr>
-     
+
+ 
+
+
 <% for item in @items %>
-    <tr>
-<div class="homecont">
+<tr>
     
-    <div class="one"> 
+   <td><div class="img"><%= link_to (image_tag item.image, :style => "height:150px") %></div></td>
+   
+   <td>
+        <div class="title"><%= link_to item.name, company_item_path(@company, item) %></div>
+        <div class="description"> <%= item.description %></div>
+        <div class="description"> <%= item.specification %></div>
+        <div class="description"> <%= item.category %></div>
+        <div class="links"><%= link_to 'Show', company_item_path(@company, item) %> |
+                           <%= link_to 'Edit', edit_company_item_path(@company, item) %> |
+                           <%= link_to 'Destroy', company_item_path(@company, item), :confirm => 'Are you sure?', :method => :delete %></td> </div>
+       <div class="price"><%= number_to_currency(item.price, :unit => "Euros ") %> </div>
+       <a href="/cart/<%= item.id %>">Add to Cart</a>
+   </td> 
+</tr>
+<tr><td colspan="2">
+    <hr/>    
+</td></tr>   
+   
     
-       <h1> <%= link_to item.name %> </h1>
-    </div>
+      
     
-    <div class="two">
-        <h1> <%= link_to (image_tag item.image, :style => "height:150px") %> </h1>
+    <!---<div class="two">
+        <h1>  link_to (image_tag item.image, :style => "height:150px") %> </h1>
     </div>
     
     <div class="three">
-        <%= item.description %>
+        < item.description %>
     </div>
-</div>
+    
+     <div class="three">
+        < number_to_currency(item.price, :unit => "Euros ") %>
+      </div>
+</div> --->
+
+      
+      
+       
         
-            
-        <td><%= link_to 'Show', company_item_path(@company, item) %></td>
-        <td><%= link_to 'Edit', edit_company_item_path(@company, item) %></td>
-        <td><%= link_to 'Destroy', company_item_path(@company, item), :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
+        
+          <!--a href="/cart/< item.id %>">Add to Cart</a><br /><br /-->
+       
+
 <% end %>
-</table>
-<br />
+
+
+
 <%= link_to 'New Item', new_company_item_path(@company) %>
 <%= link_to 'Back to the company', @company %>
