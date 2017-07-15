@@ -1,27 +1,33 @@
 <h2 align="center">Products in <%= @company.name %></h2>
 <p>
     
-    <b>Products details:</b>
+    <b>Products details show:</b>
   
-        <p> Name: <%= @item.name %> </p>
-        <p> Description: <%= @item.description %> </p>
-        <p> Specificacion: <%= @item.specification %> </p>
-        <p> Category: <%= @item.category %> </p>
-        <p> Price: <%= number_to_currency(@item.price, :unit => "€") %></p>
-        <p> <%= image_tag @item.image, :style => "height:150px" %> </p>
+        <td><div class="img"><%= image_tag @item.image, :style => "height:150px" %></div></td>
+        
+        <td>
+            
+        
+            <div class="title"><p><%= @item.name %></p> </div>
+            <div class="description">Description: <%= @item.description %></div>
+            <div class="description"> Specificacion: <%= @item.specification %></div>
+            <div class="description"> Category: <%= @item.category %></div>
+            <div class="price"> Price: <%= number_to_currency(@item.price, :unit => "€") %></div>
         
         
+        </td>
           
          <a href="/cart/<%= @item.id %>">Add to Cart</a>
    
-        
+<tr><td colspan="2">
+    <hr/>    
+</td></tr>   
 
            
 
 
-<div class="new-company-button"> 
 
-<%= link_to 'Edit', edit_company_item_path(@company, @item)%>
-<%= link_to 'Back', company_items_path%>
-</div>
+<%= link_to 'Edit', edit_company_item_path(@company, @item)%> |
+<%= link_to 'Back to the Items company', @company %>
+
 
