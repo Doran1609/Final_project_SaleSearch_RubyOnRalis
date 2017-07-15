@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
   get 'items/index'
-
   get 'items/show'
-
   get 'items/new'
-
   get 'items/edit'
-
   get 'items/update'
+  
+  get '/admin' => 'user#admin_login'
+  get '/logout' => 'user#logout'
 
   resources :companies do
     resources :items
