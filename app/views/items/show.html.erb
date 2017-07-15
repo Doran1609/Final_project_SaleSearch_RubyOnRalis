@@ -7,10 +7,15 @@
         <p> Description: <%= @item.description %> </p>
         <p> Specificacion: <%= @item.specification %> </p>
         <p> Category: <%= @item.category %> </p>
-        <p> Price: <%= @item.price %> </p>
+        <p> Price: <%= number_to_currency(@item.price, :unit => "€") %></p>
+        <p> <%= image_tag @item.image, :style => "height:150px" %> </p>
+        
+        
+          
+         <a href="/cart/<%= @item.id %>">Add to Cart</a>
    
         
-<%= link_to 'Buy' %>
+
            
 
 
@@ -19,3 +24,4 @@
 <%= link_to 'Edit', edit_company_item_path(@company, @item)%>
 <%= link_to 'Back', company_items_path%>
 </div>
+
