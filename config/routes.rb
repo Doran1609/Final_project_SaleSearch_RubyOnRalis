@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'cart/index'
+
   get 'items/index'
   get 'items/show'
   get 'items/new'
@@ -7,6 +9,11 @@ Rails.application.routes.draw do
   
   get '/admin' => 'user#admin_login'
   get '/logout' => 'user#logout'
+  
+  get '/cart' => 'cart#index' 
+  get '/cart/:id' => 'cart#add'
+  get '/cart/clear' => 'cart#clearCart' 
+
 
   resources :companies do
     resources :items

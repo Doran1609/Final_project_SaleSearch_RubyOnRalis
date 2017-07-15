@@ -1,0 +1,59 @@
+<div class="main">
+    <h1 Align="center">Your cart</h1>
+</div>
+
+
+<% if @cart.empty? %>
+    <p>Your Cart is empty</p>
+<% end %>
+
+<% total = 0 %>
+
+<table class="cart">
+    <tr>
+        <td class="legend"></td>
+        <td class="legend">Name</td>
+        <td class="legend">Price</td>
+        <td class="legend">Quantity</td>
+        <td class="legend">Total</td>
+        
+    </tr>
+    
+<% @cart.each do | id, quantity | %>
+    <% item = Item.find_by_id(id) %>
+    <tr>
+        <td>
+            <div class="image">
+                 <%= link_to (image_tag item.image, :style => "height:40px") %>
+            </div>
+        </td>
+        <td class="name"><%= link_to item.name %></td>
+        <td class="pricec"><%= number_to_currency(item.price, :unit => "€" ) %></td>
+        <td class="quantity"><%= quantity %><br /></td>
+        <td class="priceeee"><%= number_to_currency(quantity * item.price, :unit => "€") %></td>
+    </tr>
+    <% total += quantity * item.price %>
+<% end %>
+
+    <tr>
+        <td colspan="4">
+            <div class="total">Total:</div>
+        </td>
+        <td>
+            <div class="pricet"><%= number_to_currency(total, :unit => "€") %></div>
+        </td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
