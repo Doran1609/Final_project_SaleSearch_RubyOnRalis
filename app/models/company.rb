@@ -4,5 +4,8 @@ class Company < ActiveRecord::Base
     validates :image, presence: true, length: { minimum: 3, maximum: 50 }
     has_many :items
     
-    
+    def self.search(search)
+        where("name LIKE ?", "%#{search}%")
+    end
+
 end
