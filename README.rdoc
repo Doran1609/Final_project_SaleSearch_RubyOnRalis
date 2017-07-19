@@ -1,5 +1,10 @@
 == README
 
+26/06/2017
 Final project in Construction 
 
-26/06/2017
+Updated: 20/07/2017
+https://sale-search.herokuapp.com/
+To github.com:Doran1609/Final_project_SaleSearch_RubyOnRalis.git
+
+

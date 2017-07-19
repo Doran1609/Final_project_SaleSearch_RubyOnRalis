@@ -58,7 +58,7 @@ class ItemsController < ApplicationController
   def update
     @company = Company.find(params[:company_id])
     @item = Item.find(params[:id])
-    if @item.update_attributes(params.require(:item).permit(:name, :specification, :category, :price))
+    if @item.update_attributes(params.require(:item).permit(:name, :image, :specification, :category, :price))
     # Save the review successfully
     redirect_to company_item_url(@company, @item)
     else
